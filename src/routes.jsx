@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 import { Fragment } from "react";
 import { Switch, Redirect } from "react-router-dom";
 import GlobalContext from "./Contexts/GlobalContext";
-import Layout from "./Layout";
-import Home from "./Pages/Home";
+import Layout from "./components/layout/Layout";
+import RegisterHome from "./Pages/RegisteredHome";
 import NotFound from "./Pages/NotFound";
 import RouteWithLayout from "./RouteWithLayout";
 
@@ -12,7 +12,7 @@ const Routes = () => {
   return (
     <Fragment>
       <Switch>
-        <RouteWithLayout component={Home} exact layout={Layout} path="/" />
+        <RouteWithLayout component={RegisterHome} exact layout={Layout} path="/" />
         <RouteWithLayout
           component={NotFound}
           exact

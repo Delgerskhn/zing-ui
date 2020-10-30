@@ -6,11 +6,9 @@ import { Global } from "./Contexts/GlobalContext";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <React.StrictMode>
     <Global>
       <App />
-    </Global>
-  </React.StrictMode>,
+    </Global>,
   document.getElementById("root")
 );
 
