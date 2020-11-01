@@ -1,5 +1,6 @@
 import React from "react";
 import { MyNavbar } from "../components/navbar/MyNavbar";
+import {CreateTemplate } from "../components/template/CreateTemplate";
 
 // import {Search } from "../components/search/Search";
 
@@ -7,10 +8,9 @@ function RegisteredHome() {
   return (
     <div>
       <MyNavbar />
-      <button className="btn">login</button><br/>
-        <button className="btn btn-primary">login</button><br/>
-        <button className="btn btn-default">login</button><br/>
-        <button className="btn btn-bottomBorder">login</button><br/>
+      <div className="template">
+         <CreateTemplate />
+      </div>
     </div>
   );
 }

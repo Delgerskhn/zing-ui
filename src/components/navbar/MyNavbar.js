@@ -1,33 +1,25 @@
-import React from "react";
-// import { makeStyles } from "@material-ui/core/styles";
-// import AppBar from "@material-ui/core/AppBar";
-// import Toolbar from "@material-ui/core/Toolbar";
-// import Typography from "@material-ui/core/Typography";
+import React, { useState } from "react";
 import { Authentication } from "../authentication/Index";
 import { Search } from "../search/Search";
-// import "./style.css";
-// import {Login} from "../authentication/Login"
-
-// const useStyles = makeStyles((theme) => ({
-//   navRoot: {
-//     flexGrow: 1,
-//   },
-//   navApp:{
-//     backgroundColor:"#ffffff",
-//     boxShadow:"none",
-//   },
-// }));
+import { Sidebar } from "./Sidebar";
 
 export const MyNavbar = (props) => {
-  // const classes = useStyles();
+  const [showAuth, setShowAuth] = useState(true);
+  const [showTabMenu, setShowTabMenu] = useState(false);
 
   return (
     <div className="navContainer">
       <header className="navbar">
-        <div className="auth">
-          <Authentication />
+        {/* <div className="stars"></div> */}
+        {showAuth && (
+          <div className="auth">
+            <Authentication />
+          </div>
+        )}
+        {showTabMenu && <Sidebar />}
+        <div className="navh1">
+          <h1>Мэдээ хайх</h1>
         </div>
-        <div className="navh1"><h1>Мэдээ хайх</h1></div>
         <div className="navSearch">
           <Search />
         </div>

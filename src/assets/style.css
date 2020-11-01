@@ -1,12 +1,12 @@
 /* ----------------Nav bar css-------------------- */
 
 .navContainer{
-    height: 50vh;
+    height: 54vh;
 }
 .navbar{
     height: 100%;
     width: 100%;
-    background-color: #010A4C;
+    background-color: #0D1452;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
@@ -16,25 +16,67 @@
     color: white;
     width: 100%;
     text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
 }
 .auth{
     position: absolute;
-    top: 10px;
-    right: 16px;
+    top: 4vh;
+    right: 3%;
 }
 .navSearch{
     position: absolute;
-    top: 38%;
+    top: 42%;
     width: 100%;
     text-align: center;
 }
+.stars{
+    width: 1px;
+    height: 1px;
+    background: transparent;
+}
+/* ---------------------------side bar css-------------------------------- */
 
+.menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+  }
+  
+  .sidebar {
+    background-color: blue;
+    width: 250px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    transition: 850ms;
+  }
+  
+  .sidebar.active {
+    right: 0;
+    transition: 350ms;
+  }
+  .menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+  }
+  .menuButton{
+      background-color: transparent;
+      border: 0px;
+      color: #fff;
+      text-align: center;
+  }
 /* --------------------------button css-------------------------------------- */
 
 .btn{
     box-sizing: border-box;
-    padding: 6px 12px;
-    font-size: 16px;
+    padding: 10px 18px;
+    font-size: 25px;
     margin: 5px;
     box-shadow:0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
     border-style: none;
@@ -44,6 +86,7 @@
     font-weight: 400;
     line-height: 1.75;
     cursor: pointer;
+    outline: none;
     letter-spacing: 0.03em;
 }
 .btn:hover{
@@ -84,24 +127,72 @@
     width: 100%;
 }
 
-/* -----------------------hr css -------------------*/
 
-.ver1 {
-    border-left: 2px solid black;
-    height:20px;
-  }
-/* ------------------------icons------------ */
+/* -----------------------Modal css -------------------*/
 
-.iconFacebook{
-    /* position: absolute; */
-    /* top: 5px; */
-    height: 20px;
-    width: 20px;
-    /* left: 5px; */
-    color: blue;
+.modal{
+    position: absolute;
+    top: 8.1%;
+    left: 32%;
+    width: 35%;
+    height: 70vh;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #000000BA;
+    border: 1px solid #3F51B5;
+    border-radius: 15px;
+     opacity: 1;
+     text-align: center;
 }
-/* ------------------Search -------------------- */
+.selectModal{
+    width: 78%;
+    height: 9%;
+}
+.modalHeader{
+    position: relative;
+    top: 2%;
+    left: 31%;
+    width: 37%;
+    height: 7%;
+    text-align: center;
+    letter-spacing: 0px;
+    color: #3F51B5;
+    opacity: 1;
+}
 
+/* ------------------Template -------------------- */
+
+.borderBox{
+    /* position: absolute;
+    top: 60%; */
+    width: 300px;
+    height: 300px;
+    outline: none;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 6px 10px #000000A6;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    opacity: 1;
+    justify-content: center;
+}
+.plusIcon{
+    display:inline-block;
+    width:50%;
+    height:50%;
+    background:
+    linear-gradient(#000,#000),
+    linear-gradient(#000,#000);
+    background-position:center;
+    background-size: 50% 3px,3px 50%; /*thickness = 2px, length = 50% (25px)*/
+    background-repeat:no-repeat;
+}
+
+
+.template{
+    position: absolute;
+    top: 60%;
+    width: 100%;
+    text-align: center;
+}
 
 
 /* -----------------Authencation--------------- */

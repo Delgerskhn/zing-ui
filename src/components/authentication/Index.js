@@ -41,6 +41,7 @@ export const Authentication = (props) => {
         Бүртгүүлэх
       </button>
       <Modal
+      className="modal"
         isOpen={showRegisterPage||showLoginPage}
         onRequestClose={closeModal}
         aria-labelledby="alert-dialog-title"

@@ -1,10 +1,12 @@
 import React from "react";
-// import Search from "../components/search/search";
+import { MyNavbar } from "../components/navbar/MyNavbar";
+import {CreateTemplate } from "../components/template/CreateTemplate"
 
 export const Home = props => {
   return (
     <>
-      <h1>hi</h1>
+      <MyNavbar />
+      <CreateTemplate />
     </>
   );
 }

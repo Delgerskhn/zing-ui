@@ -4,6 +4,7 @@ import { Switch, Redirect } from "react-router-dom";
 import GlobalContext from "./Contexts/GlobalContext";
 import Layout from "./components/layout/Layout";
 import RegisterHome from "./Pages/RegisteredHome";
+import {Home} from "./Pages/Home"
 import NotFound from "./Pages/NotFound";
 import RouteWithLayout from "./RouteWithLayout";
 
@@ -13,6 +14,7 @@ const Routes = () => {
     <Fragment>
       <Switch>
         <RouteWithLayout component={RegisterHome} exact layout={Layout} path="/" />
+        <RouteWithLayout component={Home} exact layout={Layout} path="/home" />
         <RouteWithLayout
           component={NotFound}
           exact

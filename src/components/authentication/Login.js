@@ -1,13 +1,12 @@
 import React from "react";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import Container from "@material-ui/core/Container";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
+    margin:"5% 10%",
     display: "flex",
     background: "white",
     flexDirection: "column",
@@ -39,8 +38,6 @@ const socialBtn = {
 export const Login = (props) => {
   const classes = useStyles();
   return (
-    <Container component="main" maxWidth="xs">
-      <CssBaseline />
       <div className={classes.paper}>
         <Grid container>
           <Grid item xs>
@@ -124,6 +121,5 @@ export const Login = (props) => {
           </button>
         </form>
       </div>
-    </Container>
   );
 };
