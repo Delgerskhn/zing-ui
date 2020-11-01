@@ -1,9 +1,7 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
-// import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
@@ -21,7 +19,20 @@ const useStyles = makeStyles((theme) => ({
   submit: {
     margin: theme.spacing(3, 0, 2),
   },
+  marginspace: {
+    margin: theme.spacing(3, 0, 2),
+  },
+  gridStyle: {
+    width: "100%",
+    margin: "auto",
+    justifyContent: "center",
+  },
+  
 }));
+const btnStyle = {
+  width: "90%",
+  marginBottom: "10px",
+};
 
 export const Register = (props) => {
   const classes = useStyles();
@@ -32,24 +43,20 @@ export const Register = (props) => {
       <div className={classes.paper}>
         <Grid container>
           <Grid item xs>
-            <Button
+            <button
               onClick={() => props.showLoginModal()}
               type="submit"
-              fullWidth 
-              className={classes.submit}
+              className="btn btn-nobottomBorder"
             >
               Нэвтрэх
-            </Button>
+            </button>
           </Grid>
           <Grid item xs>
-            <Button
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
+            <button
+               className="btn btn-bottomBorder"
             >
               Бүртгүүлэх
-            </Button>
+            </button>
           </Grid>
         </Grid>
         <form className={classes.form} noValidate>
@@ -102,15 +109,29 @@ export const Register = (props) => {
               />
             </Grid>
           </Grid>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Бүртгүүлэх
-          </Button>
+          <Grid container className={classes.marginspace}>
+            <Grid item xs className={classes.gridStyle}>
+              <button
+                className="btn btn-primary"
+                type="submit"
+                style={btnStyle}
+              >
+                Бүртгүүлэх
+              </button>
+            </Grid>
+
+            <Grid item xs className={classes.gridStyle}>
+              <button
+                className="btn btn-secondary"
+                type="submit"
+                style={btnStyle}
+                onClick={() => props.closeModal()}
+              >
+                Буцах
+              </button>
+            </Grid>
+          </Grid>
+
         </form>
       </div>
     </Container>

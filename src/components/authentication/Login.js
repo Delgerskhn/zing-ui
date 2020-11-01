@@ -1,10 +1,8 @@
 import React from "react";
-import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
-// import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
@@ -19,31 +17,25 @@ const useStyles = makeStyles((theme) => ({
     width: "100%", // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
-  submit: {
+  marginspace: {
     margin: theme.spacing(3, 0, 2),
   },
-  btnStyle: {
-    textAlign: "center",
-    alignItems: "center",
-  },
-  socialIcon: {
-    iconSize: "10px",
-  },
-  spanImg: {
-    height: "28px",
-    width: "28px",
-  },
-  spanText: {
-    padding: "2px",
-    margin: "2px",
-    textTransform: "none",
-  },
-  btnSocial: {
-    background: "white",
-    marginTop: theme.spacing(1),
+  gridStyle: {
+    width: "100%",
+    margin: "auto",
+    justifyContent: "center",
   },
 }));
-
+const btnStyle = {
+  width: "90%",
+  marginBottom: "10px",
+};
+const socialBtn = {
+  padding: "5px",
+  marginLeft: "0px",
+  marginTop: "10px",
+  backgroundColor: "#f53b57",
+};
 export const Login = (props) => {
   const classes = useStyles();
   return (
@@ -52,24 +44,16 @@ export const Login = (props) => {
       <div className={classes.paper}>
         <Grid container>
           <Grid item xs>
-            <Button
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Нэвтрэх
-            </Button>
+            <button className="btn btn-bottomBorder">Нэвтрэх</button>
           </Grid>
+
           <Grid item xs>
-            <Button
+            <button
               onClick={() => props.showRegisterModal()}
-              type="submit"
-              fullWidth
-              className={classes.submit}
+              className="btn btn-nobottomBorder"
             >
               Бүртгүүлэх
-            </Button>
+            </button>
           </Grid>
         </Grid>
         <form className={classes.form} noValidate>
@@ -95,47 +79,49 @@ export const Login = (props) => {
             id="password"
             autoComplete="current-password"
           />
+          <Grid container>
+            <Grid item xs className={classes.gridStyle}>
+              <button
+                className="btn btn-primary"
+                type="submit"
+                style={btnStyle}
+                // style={{backgroundColor: "#f53b57"}}
+              >
+                Нэвтрэх
+              </button>
+            </Grid>
 
-          <Button
-            variant="contained"
-            className={classes.btnSocial}
-            type="submit"
-            fullWidth
-          >
-            <img
-              className={classes.spanImg}
-              alt="..."
-              src={require("../../assets/img/icons/common/facebook.svg")}
-            />
-            <span className={classes.spanText}>Facebook эрхээр нэвтрэх</span>
-          </Button>
-
-          <Button
-            variant="contained"
-            className={classes.btnSocial}
-            type="submit"
-            fullWidth
-          >
-            <img
-              className={classes.spanImg}
-              alt="..."
-              src={require("../../assets/img/icons/common/google.svg")}
-            />
-            <span className={classes.spanText}>Google эрхээр нэвтрэх</span>
-          </Button>
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Нэвтрэх
-          </Button>
+            <Grid item xs className={classes.gridStyle}>
+              <button
+                className="btn btn-secondary"
+                type="submit"
+                style={btnStyle}
+                onClick={() => props.closeModal()}
+              >
+                Буцах
+              </button>
+            </Grid>
+          </Grid>
 
           <Link href="#" variant="body2">
             Нууц үг мартсан?
           </Link>
+
+          <button
+            className="btn btn-primary fullWidth"
+            style={socialBtn}
+          >
+            {/* <i className="fab fa-facebook" style={facebookIcon}></i> */}
+            Facebook эрхээр нэвтрэх
+          </button>
+
+          <button
+            className="btn btn-primary fullWidth"
+            style={socialBtn}
+          >
+            {/* <i className="fab fa-google-plus-g" style={googleIcon}></i> */}
+            Google эрхээр нэвтрэх
+          </button>
         </form>
       </div>
     </Container>
