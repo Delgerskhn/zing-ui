@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import { TemplateForm } from "./TemplateForm";
+import {UserTemplates} from './UserTemplates'
 export const CreateTemplate = () => {
   const [showBorder, setShowBorder] = useState(false);
   const handleShowBorder = () => {
@@ -15,6 +16,7 @@ export const CreateTemplate = () => {
       <button className="borderBox" onClick={handleShowBorder}>
         <div className="plusIcon"></div>
       </button>
+      <UserTemplates/>
       <Modal
         className="modal"
         isOpen={showBorder}

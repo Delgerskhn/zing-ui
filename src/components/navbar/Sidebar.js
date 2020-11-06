@@ -1,38 +1,14 @@
 import React, { useState } from "react";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  menuButton: {
-    position:"absolute",
-    top:"30px",
-    right:"30px",
-    marginRight: theme.spacing(2),
-    color:"#fff",
-  },
-  icon:{
-      width:"58px",
-      height:"40px",
-  }
-}));
 
 export const Sidebar = () => {
-  const classes = useStyles();
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
   return (
     <div>
-      <IconButton
-        color="inherit"
-        aria-label="open drawer"
-        onClick={showSidebar}
-        edge="start"
-        className={classes.menuButton}
-      >
-        <MenuIcon className={classes.icon}/>
-      </IconButton>
+      <button className="btn" onClick={showSidebar}>
+        sidebar
+      </button>
       <nav className={sidebar ? "sidebar active" : "sidebar"}>
         <header>
           <img src="" alt="user profile" />

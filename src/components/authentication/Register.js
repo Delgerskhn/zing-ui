@@ -1,135 +1,54 @@
 import React from "react";
-import TextField from "@material-ui/core/TextField";
-import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    margin:"5% 10%",
-    display: "flex",
-    background: "white",
-    flexDirection: "column",
-    alignItems: "center",
-  },
-  form: {
-    width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-  marginspace: {
-    margin: theme.spacing(3, 0, 2),
-  },
-  gridStyle: {
-    width: "100%",
-    margin: "auto",
-    justifyContent: "center",
-  },
-  
-}));
-const btnStyle = {
-  width: "90%",
-  marginBottom: "10px",
-};
 
 export const Register = (props) => {
-  const classes = useStyles();
-
   return (
-      <div className={classes.paper}>
-        <Grid container>
-          <Grid item xs>
-            <button
-              onClick={() => props.showLoginModal()}
-              type="submit"
-              className="btn btn-nobottomBorder"
-            >
-              Нэвтрэх
-            </button>
-          </Grid>
-          <Grid item xs>
-            <button
-               className="btn btn-bottomBorder"
-            >
-              Бүртгүүлэх
-            </button>
-          </Grid>
-        </Grid>
-        <form className={classes.form} noValidate>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <TextField
-                autoComplete="uname"
-                name="username"
-                variant="outlined"
-                required
-                fullWidth
-                id="username"
-                label="Нэвтрэх нэр"
-                autoFocus
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="email"
-                label="И-мэйл"
-                name="email"
-                autoComplete="email"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="password"
-                label="Нууц үг"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                name="repeatPassword"
-                label="Нууц үг давтах"
-                type="password"
-                id="repeatPassword"
-                autoComplete="repeatPassword"
-              />
-            </Grid>
-          </Grid>
-          <Grid container className={classes.marginspace}>
-            <Grid item xs className={classes.gridStyle}>
-              <button
-                className="btn btn-primary"
-                type="submit"
-                style={btnStyle}
-              >
-                Бүртгүүлэх
-              </button>
-            </Grid>
+    <div>
+      <div className="gridCont">
+        <button
+          onClick={() => props.showLoginModal()}
+          type="submit"
+          className="btn btn-nobottomBorder signHeader"
+        >
+          <h3>Нэвтрэх</h3>
+        </button>
 
-            <Grid item xs className={classes.gridStyle}>
-              <button
-                className="btn btn-secondary"
-                type="submit"
-                style={btnStyle}
-                onClick={() => props.closeModal()}
-              >
-                Буцах
-              </button>
-            </Grid>
-          </Grid>
-
-        </form>
+        <button className="btn btn-bottomBorder signHeader">
+          <h3>Бүртгүүлэх</h3>
+        </button>
       </div>
+      <form>
+        <input name="name" className="inputForm" placeholder="Нэвтрэх нэр" />
+        <input
+          name="email"
+          className="inputForm"
+          type="email"
+          placeholder="И-мэйл"
+        />
+        <input
+          name="password"
+          type="password"
+          className="inputForm"
+          placeholder="Нууц үг"
+        />
+        <input
+          name="repeatPass"
+          type="password"
+          className="inputForm"
+          placeholder="Нууц үг давтах"
+        />
+        <div className="gridCont">
+          <button className="btn btn-primary modalBtn" type="submit">
+            Бүртгүүлэх
+          </button>
+          <button
+            className="btn btn-secondary modalBtn"
+            type="submit"
+            onClick={() => props.closeModal()}
+          >
+            Буцах
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
