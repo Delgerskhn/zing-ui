@@ -1,20 +1,77 @@
-import React from "react";
+import React, { useState } from "react";
+import DayPickerInput from "react-day-picker/DayPickerInput";
+import "react-day-picker/lib/style.css";
+
+const style = {
+  width: "92%",
+  height: "5vh",
+  fontSize: "23px",
+  paddingLeft: "5%",
+  border: "1px solid #3F51B5",
+  borderRadius: "10px",
+  outline: "none",
+  color: "#3F51B5",
+};
 
 export const TemplateForm = (props) => {
-  const handleChange = (e) => {};
+  const [startDate, seStarttDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+  const [state, setState] = useState({
+    borderName: "",
+    domain: "",
+    source: "",
+    category: "",
+    country: "",
+    fromDay: "",
+    toDay: "",
+  });
+  const onChange = ({ target }) => {
+    const value = target.value;
+    setState((prevState) => ({
+      ...prevState,
+      [target.name]: value,
+    }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log(state);
+    console.log(startDate);
+    console.log(endDate);
+  };
+
   return (
     <div>
       <h1 className="modalHeader">Border Details</h1>
-      <form>
-        <input name="borderName" className="inputForm" placeholder="Хайлт нэр"/>
-        <input name="domain" className="inputForm" placeholder="Домайн"/>
-        <input name="source" className="inputForm" placeholder="Эх сурвалж"/>
+      <form onSubmit={onSubmit}>
+        <input
+          name="borderName"
+          value={state.borderName}
+          className="inputForm"
+          placeholder="Хайлт нэр"
+          onChange={onChange}
+          required
+        />
+        <input
+          value={state.domain}
+          name="domain"
+          className="inputForm"
+          placeholder="Домайн"
+          onChange={onChange}
+        />
+        <input
+          value={state.source}
+          name="source"
+          className="inputForm"
+          placeholder="Эх сурвалж"
+          onChange={onChange}
+        />
         <br />
         <div className="gridCont">
           <select
-            // value="category"
+            value={state.category}
             name="category"
-            onChange={handleChange}
+            onChange={onChange}
             className="selectModal"
           >
             <option value="">Ангилал</option>
@@ -27,12 +84,14 @@ export const TemplateForm = (props) => {
             <option value="sports">sports</option>
           </select>
           <select
-            // value="country"
+            value={state.country}
             name="country"
-            onChange={handleChange}
+            onChange={onChange}
             className="selectModal"
           >
             <option value="">Улс</option>
+            <option value="ua">UA</option>
+            <option value="us">US</option>
             <option value="ae">AE</option>
             <option value="ar">AR</option>
             <option value="at">AT</option>
@@ -84,14 +143,26 @@ export const TemplateForm = (props) => {
             <option value="th">TH</option>
             <option value="tr">TR</option>
             <option value="tw">TW</option>
-            <option value="ua">UA</option>
-            <option value="us">US</option>
             <option value="ve">VE</option>
             <option value="za">ZA</option>
           </select>
         </div>
-
-        <button className="btn btn-primary modalBtn">Нэмэх</button>
+        <div className="gridCont">
+          <DayPickerInput
+            onDayChange={(e) => seStarttDate(e)}
+            inputProps={{ style }}
+            placeholder="Эхлэх огноо"
+            
+          />
+          <DayPickerInput
+            onDayChange={(e) => setEndDate(e)}
+            inputProps={{ style }}
+            placeholder="Дуусах огноо"
+          />
+        </div>
+        <button className="btn btn-primary modalBtn" type="submit">
+          Нэмэх
+        </button>
         <button
           className="btn btn-secondary modalBtn"
           onClick={() => props.handleCloseModal()}

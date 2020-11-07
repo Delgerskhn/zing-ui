@@ -16,6 +16,7 @@ export const MyNavbar = (props) => {
             <Authentication />
           </div>
         )}
+         {/* <Sidebar /> */}
         {showTabMenu && <Sidebar />}
         <div className="navh1">
           <h1>Мэдээ хайх</h1>
