@@ -3,16 +3,16 @@ import { templateData } from "./exampleJsonData";
 
 export const UserTemplates = () => {
   return (
-    <div className="borderContainer">
+    <div>
       {templateData.map((data, key) => {
         return (
           <div className="userBorderBox" key={key}>
             <div className="userCont">
-              <button className="editIcon">
-                <i className="fas fa-pen"></i>
-              </button>
-              <button className="deleteIcon">
+              <button style={{background: "red"}}>
                 <i className="fa fa-close"></i>
+              </button>
+              <button style={{background: "yellow"}}>
+                <i className="fas fa-pen"></i>
               </button>
             </div>
             <div className="borderName">{data.name}</div>

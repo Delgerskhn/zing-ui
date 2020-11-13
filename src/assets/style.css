@@ -1,18 +1,31 @@
+:root {
+    --main-bg-color:  #121856;
+    --light-blue-color:#3f51b5;
+}
 body{
-    font-size: 25px;
+    overflow-x: hidden !important;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+button,a{
+    cursor: pointer;
 }
 /* ----------------Nav bar css-------------------- */
 
 .navContainer{
     height: 54vh;
     position: relative;
+    background-attachment: fixed;
+    overflow: hidden;
 }
 .navbar{
     height: 100%;
     width: 100%;
     background-color: #121856;
-    border-bottom-left-radius: 25px;
-    border-bottom-right-radius: 25px;
 }
 .navh1{
     position: absolute;
@@ -21,7 +34,7 @@ body{
     width: 100%;
     text-align: center;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 25px;
 }
 .auth{
     position: absolute;
@@ -34,10 +47,52 @@ body{
     width: 100%;
     left: 30%;
 }
-.stars{
-    width: 1px;
-    height: 1px;
-    background: transparent;
+.scene img{
+    position: absolute;
+    width: 15%;
+    height: 15%;
+    transform: scale(1.2);
+    filter:drop-shadow(8px 8px 10px var(--main-bg-color))
+}
+.img1{
+    top:10vh;
+    left: 45%;
+}
+.img2{
+    top: 30vh;
+    left: 5%;
+}
+.img3{
+    top: 40vh;
+    right: 5%;
+}
+.img4{
+    top: 15vh;
+    right: 20%;
+}
+.img5{
+    top: 10vh;
+    left: 25%;
+}
+.scene i{
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    animation: animate linear infinite;
+}
+
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: translateY(0);
+    }
+    10%,90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
 }
 /* ---------------------------side bar css-------------------------------- */
 
@@ -48,72 +103,110 @@ body{
   }
   
   .sidebar {
-    background-color: blue;
+    background-color: var(--light-blue-color);
     width: 25%;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     position: fixed;
     top: 0;
     right: -100%;
-    transition: 850ms;
+    transition: .8s;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    color: #fff;
   }
   
   .sidebar.active {
     right: 0;
-    transition: 350ms;
   }
-  .menu-bars {
-    margin-left: 2rem;
-    font-size: 2rem;
-    background: none;
+  
+.sidebarHeader{
+    padding:2em 0.5em;
+	text-align:center;
+}
+
+.ProfileImg{
+      width: 20%;
+      height: 20%;
+      border-radius: 50%;
   }
-  .menuButton{
-      background-color: transparent;
-      border: 0px;
-      color: #fff;
-      text-align: center;
-  }
+  .sidebar h4{
+    font-weight: 300;
+    margin-bottom: 0%;
+    letter-spacing: 1;
+}
+.link,.dropdown-btn{
+    display: block;
+    border: none;
+    color: #fff;
+    width: 100%;
+    font-size: 16px;
+    background:none;
+    text-align: left;
+    outline: none;
+    text-decoration: none;
+    color:#fff;
+}
+.link:hover,.dropdown-btn:hover,li:hover,.sidebar a:hover{
+    opacity: .8;
+    transform: translateX(-2px);
+}
+.sidebar li{
+    list-style: none;
+    margin-bottom: 1vh;
+}
+.footer{
+    position: absolute;
+    width: 100%;
+    bottom: 5vh;
+    text-align: center;
+} 
+.sidebar footer button{
+    background: #9BAAFD;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    box-shadow: 0px 3px 6px #000000B8;
+    margin-bottom: 1vh;
+}
+
 /* --------------------------button css-------------------------------------- */
 
 .btn{
     box-sizing: border-box;
     padding: 10px 18px;
-    font-size: 25px;
-    margin: 5px;
+    font-size: 18px;
     box-shadow:0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
     border-style: none;
-    border-radius: 5px;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    border-radius: 10px;
     font-weight: 400;
-    line-height: 1.75;
-    cursor: pointer;
+    line-height: 1.3;
     outline: none;
     letter-spacing: 0.03em;
 }
 .btn:hover{
     opacity: 0.8;
+    transform: scale(1.02);
 }
 .btn-primary{
     color: #fff;
-    border: #fff;
-    background-color: #3f51b5;
+    background-color:  var(--light-blue-color);
 }
 .btn-default{
-    color: #000;
+    color:  var(--light-blue-color);
     border: #fff;
     background-color: #ffffff;
 }
 .btn-bottomBorder{
     box-shadow: none;
     background-color: #ffffff;
-    color: #3f51b5;
+    color:var(--light-blue-color);
     border-radius: 0px;
-    border: 4px solid #3f51b5;
+    border: 4px solid var(--light-blue-color);
     border-width: 0 0 4px 0;
 }
+
 .btn-secondary {
     color: #fff;
     background-color: #6c757d;
@@ -126,6 +219,9 @@ body{
     border: 4px solid #fff;
     border-width: 0 0 4px 0;
 }
+.btn-bottomBorder:hover,.btn-nobottomBorder:hover{
+    transform: scale(1);
+}
 /* ------------------full width css--------------- */
 .fullWidth{
     width: 100%;
@@ -135,29 +231,58 @@ body{
 /* -----------------------Modal css -------------------*/
 
 .modal{
-    position: absolute;
-    top: 8.1%;
-    left: 32%;
-    width: 35%;
+    position: relative; 
+    margin: 5% auto 10% auto;
+    width: 40%;
     height: 70vh;
+    border-radius: 25px;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #000000BA;
-    border: 1px solid #3F51B5;
     border-radius: 15px;
-     opacity: 1;
-     outline: none;
-     text-align: center;
+    opacity: 1;
+    outline: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
+.modal-content{
+    padding: 15px 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  .animate {
+    -webkit-animation: animatezoom 0.7s;
+    animation: animatezoom 0.7s
+  }
+  
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+  }
+    
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+  }
 .gridCont{
-    margin-left: 11%;
+    margin-bottom: 2vh;
     width: 78%;
-    margin-bottom: 3vh;
     display: flex;
     justify-content: space-between;
-
-    /* text-align: center; */
-    /* justify-content: space-between; */
-    /* align-items: center; */
+}
+.gridItem{
+    width: 47%;
+}
+.form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .DayPickerInput{
     width: 47%;
@@ -166,46 +291,44 @@ body{
     padding: 0%;
 }
 .selectModal{
-    width: 47%;
+    width: 48%;
     height: 5vh;
-    margin: 0px;
-    font-size: 25px;
-    border: 1px solid #3F51B5;
+    font-size: 16px;
+    border: 1px solid #ccc;
     border-radius:10px ;
     outline: none;
+    margin-top: 0%;
     color: #3F51B5;
     padding-left: 3%;
 }
-.right{
-    margin-right: 6%;
-}
+
 .modalHeader{
-    position: relative;
-    top: 2%;
-    left: 31%;
-    width: 37%;
-    height: 7%;
+    width: 100%;
     text-align: center;
-    letter-spacing: 0px;
     color: #3F51B5;
-    opacity: 1;
-}
-.modalBtn{
-    width: 35%;
-    margin-left: 5%;
-    margin-right: 5%;
 }
 
+
 .inputForm{
-    width: 78%;
+    width: 75%;
     height: 5vh;
     outline: none;
-    border: 1px solid #3F51B5;
+    border: 1px solid #ccc;
     border-radius:10px ;
-    padding-left: 10px;
+    padding-left: 3%;
     color: #3F51B5;
-    font-size: 25px;
+    font-size: 16px;
     margin-bottom: 3vh;
+}
+.form-social-btn{
+    width: 78%;
+    color: var(--light-blue-color);
+    background: #fff;
+    margin-bottom: 3vh;
+}
+.form-social-btn:hover{
+    background:var(--light-blue-color);
+    color: #fff;
 }
 .react-datepicker__input-container input {
     width: 100%;
@@ -213,17 +336,14 @@ body{
 
 .signHeader{
 width: 40%;
-padding:0;
-/* font-size: 40px; */
+padding: 0;
 }
 
 /* -----------------------Template ----------------------- */
 
 .borderBox{
-    /* position: absolute;
-    top: 60%; */
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     outline: none;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     box-shadow: 0px 6px 10px #000000A6;
@@ -231,6 +351,11 @@ padding:0;
     border-radius: 20px;
     opacity: 1;
     justify-content: center;
+}
+.borderBox:hover{
+    transform: scale(1.01);   
+    opacity: 0.8;
+    border: 1px solid var(--light-blue-color);
 }
 .plusIcon{
     display:inline-block;
@@ -249,66 +374,51 @@ padding:0;
     position: absolute;
     top: 60%;
     width: 100%;
+    display: flex;
     text-align: center;
 }
 
 .userBorderBox{
-    position: relative;
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     outline: none;
     background:#121856 0% 0% no-repeat padding-box;
     box-shadow: 0px 6px 10px #000000A6;
     border: 1px solid #121856;
     border-radius: 20px;
-    opacity: 1;
     letter-spacing: 1px;
-    margin: auto;
-    text-align: center;
-    /* justify-content: center; */
+    display: flex;
+    flex-direction: column;
+
 }
-.deleteIcon{
-    position: absolute;
-    top: 3%;
-    right: 3%;
+.userBorderBox:hover{
+    transform: scale(1.01);
+}
+.userCont{
+    float: right;
+    margin: 4%;
+}
+
+.userCont > button{
+    float: right;
     outline: none;
     border: none;
     border-radius: 25px;
-    background-color: red;
-    width: 10%;
-    height: 10%;
-    justify-content: center;
+    width: 30px;
+    height: 30px;
     text-align: center;
-    transition:1s;
+    margin-right: 3%;
 }
-.editIcon{
-    position: absolute;
-    top: 3%;
-    right: 16%;
-    outline: none;
-    border: none;
-    border-radius: 25px;
-    background-color: yellow;
-    width: 10%;
-    height: 10%;
-    justify-content: center;
-    text-align: center;
-    transition:1s;
-}
-.editIcon:hover,.deleteIcon:hover{
+
+.userCont > button:hover{
     transform: scale(1.1); 
 }
 .borderName{
     color: #fff;
-    position: relative;
-    top: 20%;
-    font-size: 3rem;
+    font-size: 25px;
     font-weight: 600;
-}
-
-.borderContainer{
-    display: flex;
-    flex-direction: row;
+    margin-top: 10%;
+    text-align: center;
 }
 /* -----------------=========Search Result css=========--------------- */
 

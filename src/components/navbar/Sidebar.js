@@ -10,31 +10,28 @@ export const Sidebar = () => {
         sidebar
       </button>
       <nav className={sidebar ? "sidebar active" : "sidebar"}>
-        <header>
-          <img src="" alt="user profile" />
-          <h3>User name</h3>
-          <p>Edit profile</p>
+        <header className="sidebarHeader">
+          <img src="" alt="user profile" className="ProfileImg" />
+          <h4 style={{ fontWeight: "400" }}>User name</h4>
+          <a href="/" style={{ color: "#9DABE4", margin: "0px" }}>Edit profile</a>
         </header>
-        <main>
+        <main style={{ padding: "0em 3em" }}>
+          <a href="/" className="link">
+            <h4>Add border</h4>
+          </a>
+          <button className="dropdown-btn">
+            <h2>
+              Borders <i className="fa fa-chevron-up" />
+            </h2>
+          </button>
           <ul>
-            <li>
-              <a href="/">Add border</a>
-            </li>
-            <li>
-              <div>
-                <i className="fa fa-chevron-up" />
-                borders
-                <ul>
-                  <li>border 1</li>
-                  <li>border 2</li>
-                  <li>border 3</li>
-                  <li>border 4</li>
-                </ul>
-              </div>
-            </li>
+            <li> border 1</li>
+            <li>border 2</li>
+            <li>border 3</li>
+            <li>border 4</li>
           </ul>
         </main>
-        <footer>
+        <footer className="footer">
           <button>Log out</button>
           <p>
             ZING v1.0.1

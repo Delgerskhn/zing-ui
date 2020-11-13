@@ -22,8 +22,8 @@ export const Register = (props) => {
   };
 
   return (
-    <div>
-      <div className="gridCont">
+    <div className="modal-content">
+      <header className="gridCont">
         <button
           onClick={() => props.showLoginModal()}
           className="btn btn-nobottomBorder signHeader"
@@ -34,8 +34,8 @@ export const Register = (props) => {
         <button className="btn btn-bottomBorder signHeader">
           <h3>Бүртгүүлэх</h3>
         </button>
-      </div>
-      <form onSubmit={onSubmit}>
+      </header>
+      <form onSubmit={onSubmit} className="form">
         <input
           name="username"
           value={state.username}
@@ -72,11 +72,11 @@ export const Register = (props) => {
           required
         />
         <div className="gridCont">
-          <button className="btn btn-primary modalBtn" type="submit">
+          <button className="btn btn-primary gridItem" type="submit">
             Бүртгүүлэх
           </button>
           <button
-            className="btn btn-secondary modalBtn"
+            className="btn btn-secondary gridItem"
             onClick={() => props.closeModal()}
           >
             Буцах

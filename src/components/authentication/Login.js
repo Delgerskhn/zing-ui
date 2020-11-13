@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import Link from "@material-ui/core/Link";
 import FacebookAuth from "react-facebook-auth";
 
-const socialBtn = {
-  width: "78%",
-  padding: "5px",
-  backgroundColor: "#f53b57",
-  marginTop: "2vh",
-};
+// const socialBtn = {
+//   width: "78%",
+//   padding: "5px",
+//   backgroundColor: "#f53b57",
+//   marginTop: "2vh",
+// };
 
 const MyFacebookButton = ({ onClick }) => (
-  <button className="btn btn-primary" style={socialBtn} onClick={onClick}>
+  <button className="btn btn-primary" className="btn form-social-btn" onClick={onClick}>
     Login with facebook
   </button>
 );
@@ -43,8 +43,8 @@ export const Login = (props) => {
     }
   };
   return (
-    <div>
-      <div className="gridCont">
+    <div className="modal-content">
+      <header className="gridCont">
         <button className="btn btn-bottomBorder signHeader">
           <h3>Нэвтрэх</h3>
         </button>
@@ -54,8 +54,8 @@ export const Login = (props) => {
         >
           <h3>Бүртгүүлэх</h3>
         </button>
-      </div>
-      <form onSubmit={onSubmit}>
+      </header>
+      <form onSubmit={onSubmit} className="form">
         <input
           name="username"
           value={state.username}
@@ -74,12 +74,12 @@ export const Login = (props) => {
           required
         />
         <div className="gridCont">
-          <button className="btn btn-primary modalBtn" type="submit">
+          <button className="btn btn-primary gridItem" type="submit">
             Нэвтрэх
           </button>
 
           <button
-            className="btn btn-secondary modalBtn"
+            className="btn btn-secondary gridItem"
             onClick={() => props.closeModal()}
           >
             Буцах
@@ -96,7 +96,7 @@ export const Login = (props) => {
         component={MyFacebookButton}
         redirectUri={"localhost:3000"}
       />
-      <button className="btn btn-primary" style={socialBtn}>
+      <button className="btn btn-primary" className="btn form-social-btn">
         Google эрхээр нэвтрэх
       </button>
     </div>

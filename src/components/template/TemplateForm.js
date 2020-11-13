@@ -3,11 +3,11 @@ import DayPickerInput from "react-day-picker/DayPickerInput";
 import "react-day-picker/lib/style.css";
 
 const style = {
-  width: "92%",
+  width: "94%",
   height: "5vh",
-  fontSize: "23px",
+  fontSize: "16px",
   paddingLeft: "5%",
-  border: "1px solid #3F51B5",
+  border: "1px solid #ccc",
   borderRadius: "10px",
   outline: "none",
   color: "#3F51B5",
@@ -41,9 +41,9 @@ export const TemplateForm = (props) => {
   };
 
   return (
-    <div>
-      <h1 className="modalHeader">Border Details</h1>
-      <form onSubmit={onSubmit}>
+    <div className="modal-content">
+      <h3 className="modalHeader">Border Details</h3>
+      <form onSubmit={onSubmit} className="form">
         <input
           name="borderName"
           value={state.borderName}
@@ -160,15 +160,17 @@ export const TemplateForm = (props) => {
             placeholder="Дуусах огноо"
           />
         </div>
-        <button className="btn btn-primary modalBtn" type="submit">
+        <div className="gridCont" style={{marginTop:"2vh",marginBottom:"2vh"}}>
+        <button className="btn btn-primary gridItem" type="submit">
           Нэмэх
         </button>
         <button
-          className="btn btn-secondary modalBtn"
+          className="btn btn-secondary gridItem"
           onClick={() => props.handleCloseModal()}
         >
           Буцах
         </button>
+        </div>
       </form>
     </div>
   );
