@@ -3,7 +3,7 @@ import { templateData } from "./exampleJsonData";
 
 export const UserTemplates = () => {
   return (
-    <div>
+    <div className="userBorder">
       {templateData.map((data, key) => {
         return (
           <div className="userBorderBox" key={key}>

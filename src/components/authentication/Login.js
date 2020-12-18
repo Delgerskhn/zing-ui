@@ -1,13 +1,7 @@
 import React, { useState } from "react";
 import Link from "@material-ui/core/Link";
+import {registerAPI} from "../restApi/Index";
 import FacebookAuth from "react-facebook-auth";
-
-// const socialBtn = {
-//   width: "78%",
-//   padding: "5px",
-//   backgroundColor: "#f53b57",
-//   marginTop: "2vh",
-// };
 
 const MyFacebookButton = ({ onClick }) => (
   <button className="btn btn-primary" className="btn form-social-btn" onClick={onClick}>
@@ -33,7 +27,12 @@ export const Login = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log(state);
+    const data={
+      username:state.username,
+      password:state.password,
+    }
+    registerAPI(data);
+    console.log(data);
   };
   const authenticate = (response) => {
     console.log(response);
@@ -86,7 +85,7 @@ export const Login = (props) => {
           </button>
         </div>
       </form>
-      <Link href="#" variant="body2" style={{ fontSize: "20px" }}>
+      <Link href="#" variant="body2">
         Нууц үг мартсан?
       </Link>
       <br />

@@ -1,6 +1,11 @@
 :root {
     --main-bg-color:  #121856;
     --light-blue-color:#3f51b5;
+    --main-color-white:#ffffff;
+    --header-font-size:2rem;
+    --max-font-size:1.4rem; /*21px*/
+    --avg-font-size:1.2rem; /*18px*/
+    --min-font-size:1rem;  /*16px*/
 }
 body{
     overflow-x: hidden !important;
@@ -8,7 +13,7 @@ body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-size: 16px;
+    font-size: var(--avg-font-size);
     scroll-behavior: smooth;
 }
 button,a{
@@ -22,19 +27,27 @@ button,a{
     background-attachment: fixed;
     overflow: hidden;
 }
+.searchNavbar{
+    height: 10vh;
+    width: 100%;
+    position: relative;
+}
+.hide{
+    display: none;
+}
 .navbar{
     height: 100%;
     width: 100%;
-    background-color: #121856;
+    background-color: var(--main-bg-color);
 }
 .navh1{
     position: absolute;
     top: 25vh;
-    color: white;
+    color:  var(--main-color-white);
     width: 100%;
     text-align: center;
     text-transform: uppercase;
-    font-size: 25px;
+    font-size: var(--header-font-size);
 }
 .auth{
     position: absolute;
@@ -46,6 +59,12 @@ button,a{
     top: 42vh;
     width: 100%;
     left: 30%;
+}
+.navSearchResult{
+    position: absolute;
+    top: 15vh;
+    width: 100%;
+    left: 5%;
 }
 .scene img{
     position: absolute;
@@ -76,7 +95,7 @@ button,a{
 }
 .scene i{
     position: absolute;
-    background: #fff;
+    background: var(--main-color-white);
     border-radius: 50%;
     animation: animate linear infinite;
 }
@@ -96,10 +115,25 @@ button,a{
 }
 /* ---------------------------side bar css-------------------------------- */
 
-.menu-bars {
-    margin-left: 2rem;
-    font-size: 2rem;
+.menu-btn {
+    font-size: var(--header-font-size);
     background: none;
+    float: right;
+    margin-right: 30px;
+    margin-top: 30px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    text-align: center;
+  }
+  .hamburger{
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin-bottom: 5px;
+    position: relative;
+    background:  var(--main-color-white);
+    border-radius: 3px;
   }
   
   .sidebar {
@@ -112,7 +146,7 @@ button,a{
     transition: .8s;
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
-    color: #fff;
+    color:  var(--main-color-white);
   }
   
   .sidebar.active {
@@ -136,15 +170,15 @@ button,a{
 }
 .link,.dropdown-btn{
     display: block;
+    margin-bottom: 10px;
     border: none;
-    color: #fff;
     width: 100%;
-    font-size: 16px;
+    font-size: var(--max-width-font-size);
     background:none;
     text-align: left;
     outline: none;
     text-decoration: none;
-    color:#fff;
+    color: var(--main-color-white);
 }
 .link:hover,.dropdown-btn:hover,li:hover,.sidebar a:hover{
     opacity: .8;
@@ -164,11 +198,49 @@ button,a{
     background: #9BAAFD;
     border-radius: 10px;
     padding: 5px 10px;
-    color: #fff;
+    color:  var(--main-color-white);
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: var(--max-width-font-size);
     box-shadow: 0px 3px 6px #000000B8;
     margin-bottom: 1vh;
+}
+/* -----------------------search ------------------- */
+.searchContainer{
+    display: flex;
+    align-items: center;
+    width: 40%;
+    height: 6vh;
+    background-color: #3f51b5;
+    border:1px solid var(--light-blue-color);
+    border-radius: 50px;
+    box-shadow: 0 2px 5px 1px rgba(64,60,67,.16);
+  }
+.searchInput{
+    padding-left:20px;
+    flex: 1;
+    outline: none;
+    border: none;
+    font-size: var(--avg-font-size);
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+    border-radius:50px 0px 0px 50px;
+  }
+.iconButton{
+  float:right;
+  height: 100%;
+  margin:0;
+  background:var(--light-blue-color);
+  width:10%;
+  border:1px solid var(--light-blue-color);
+  border-radius:0px 50px 50px 0px;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  outline: none;
+  font-size: var(--max-font-size);
+  color: white;
 }
 
 /* --------------------------button css-------------------------------------- */
@@ -176,7 +248,7 @@ button,a{
 .btn{
     box-sizing: border-box;
     padding: 10px 18px;
-    font-size: 18px;
+    font-size: var(--max-width-font-size);
     box-shadow:0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
     border-style: none;
     border-radius: 10px;
@@ -190,17 +262,17 @@ button,a{
     transform: scale(1.02);
 }
 .btn-primary{
-    color: #fff;
+    color:  var(--main-color-white);
     background-color:  var(--light-blue-color);
 }
 .btn-default{
     color:  var(--light-blue-color);
-    border: #fff;
-    background-color: #ffffff;
+    border:  var(--main-color-white);
+    background-color:  var(--main-color-white);
 }
 .btn-bottomBorder{
     box-shadow: none;
-    background-color: #ffffff;
+    background-color:  var(--main-color-white);
     color:var(--light-blue-color);
     border-radius: 0px;
     border: 4px solid var(--light-blue-color);
@@ -208,15 +280,15 @@ button,a{
 }
 
 .btn-secondary {
-    color: #fff;
+    color:  var(--main-color-white);
     background-color: #6c757d;
     border-color: #6c757d;
 }
 .btn-nobottomBorder{
     box-shadow: none;
-    background-color: #ffffff;
-    color: #3f51b5;
-    border: 4px solid #fff;
+    background-color:  var(--main-color-white);
+    color: var(--light-blue-color);
+    border: 4px solid  var(--main-color-white);
     border-width: 0 0 4px 0;
 }
 .btn-bottomBorder:hover,.btn-nobottomBorder:hover{
@@ -236,7 +308,7 @@ button,a{
     width: 40%;
     height: 70vh;
     border-radius: 25px;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background:  var(--main-color-white) 0% 0% no-repeat padding-box;
     box-shadow: 0px 3px 6px #000000BA;
     border-radius: 15px;
     opacity: 1;
@@ -293,19 +365,19 @@ button,a{
 .selectModal{
     width: 48%;
     height: 5vh;
-    font-size: 16px;
+    font-size: var(--max-width-font-size);
     border: 1px solid #ccc;
     border-radius:10px ;
     outline: none;
     margin-top: 0%;
-    color: #3F51B5;
+    color: var(--light-blue-color);
     padding-left: 3%;
 }
 
 .modalHeader{
     width: 100%;
     text-align: center;
-    color: #3F51B5;
+    color: var(--light-blue-color);
 }
 
 
@@ -316,36 +388,36 @@ button,a{
     border: 1px solid #ccc;
     border-radius:10px ;
     padding-left: 3%;
-    color: #3F51B5;
-    font-size: 16px;
+    color: var(--light-blue-color);
+    font-size: var(--max-width-font-size);
     margin-bottom: 3vh;
 }
 .form-social-btn{
     width: 78%;
     color: var(--light-blue-color);
-    background: #fff;
+    background:  var(--main-color-white);
     margin-bottom: 3vh;
 }
 .form-social-btn:hover{
     background:var(--light-blue-color);
-    color: #fff;
+    color:  var(--main-color-white);
 }
 .react-datepicker__input-container input {
     width: 100%;
  }
 
 .signHeader{
-width: 40%;
+width: 50%;
 padding: 0;
 }
 
 /* -----------------------Template ----------------------- */
 
 .borderBox{
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
     outline: none;
-    background: #FFFFFF 0% 0% no-repeat padding-box;
+    background:  var(--main-color-white) 0% 0% no-repeat padding-box;
     box-shadow: 0px 6px 10px #000000A6;
     border: 1px solid #000000;
     border-radius: 20px;
@@ -371,20 +443,32 @@ padding: 0;
 
 
 .template{
+    width: 100%;
     position: absolute;
     top: 60%;
     width: 100%;
     display: flex;
-    text-align: center;
+    justify-content: center;
 }
-
+.homeTemplate{
+  padding-right: 30px;
+  padding-left: 30px;
+  position: relative; 
+  top: 5vh;
+  width: 100%;
+  display: flex;
+  /* justify-content: space-around; */
+}
+.userBorder{
+    display: flex;
+}
 .userBorderBox{
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
     outline: none;
-    background:#121856 0% 0% no-repeat padding-box;
+    background:var(--main-bg-color) 0% 0% no-repeat padding-box;
     box-shadow: 0px 6px 10px #000000A6;
-    border: 1px solid #121856;
+    border: 1px solid var(--main-bg-color);
     border-radius: 20px;
     letter-spacing: 1px;
     display: flex;
@@ -414,32 +498,30 @@ padding: 0;
     transform: scale(1.1); 
 }
 .borderName{
-    color: #fff;
-    font-size: 25px;
+    color:  var(--main-color-white);
+    font-size: var(--header-font-size);
     font-weight: 600;
     margin-top: 10%;
     text-align: center;
 }
 /* -----------------=========Search Result css=========--------------- */
 
-.searchNavbar{
-    height: 10vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    background-color: #121856;
-    color: white;
-}
-.navSideBar{
-    position: absolute;
-    top: 2vh;
-    right: 2%;
-}
-.searchPart{
-    position: relative;
-    top: 14vh;
-    left: 10%;
-}
 
 /* ===============footer cs================== */
 
+@media only screen and (max-width: 1300px) {
+    body {
+      font-size: var(--avg-width-font-size);
+    }
+    .navh1{
+        font-size: 1.5em;
+    }
+    .link,.dropdown-btn,.selectModal,.sideBtn,.iconButton,.inputForm,.btn{
+        font-size: var(--avg-width-font-size);
+        line-height: 1;
+    }
+    .borderBox,.userBorderBox{
+        width: 180px;
+        height: 180px;
+    }
+  }

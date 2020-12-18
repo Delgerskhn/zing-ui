@@ -6,6 +6,7 @@ import { Sidebar } from "./Sidebar";
 export const MyNavbar = (props) => {
   const [showAuth, setShowAuth] = useState(true);
   const [showTabMenu, setShowTabMenu] = useState(false);
+  const [searchNav, setSearchNav] = useState(false);
 
   useEffect(() => {
     checkLocation();
@@ -17,7 +18,14 @@ export const MyNavbar = (props) => {
     if (pathname === "/") {
       setShowAuth(true);
       setShowTabMenu(false);
+      setSearchNav(false);
     } else {
+      if(pathname === "/search"){
+        setSearchNav(true);
+      }
+      else{
+        setSearchNav(false);
+      }
       setShowAuth(false);
       setShowTabMenu(true);
     }
@@ -43,9 +51,9 @@ export const MyNavbar = (props) => {
     }
   };
   return (
-    <div className="navContainer">
+    <div className={!searchNav? "navContainer":"searchNavbar"}>
       <header className="navbar">
-        <div className="scene">
+        <div className={!searchNav? "scene":"hide"}>
           <img
             src={require("../../assets/img/background/worldwide.svg")}
             className="layer img1"
@@ -81,7 +89,7 @@ export const MyNavbar = (props) => {
         <div className="navh1">
           <h1>Мэдээ хайх</h1>
         </div>
-        <div className="navSearch">
+        <div className={!searchNav? "navSearch":"navSearchResult"}>
           <Search />
         </div>
       </header>
