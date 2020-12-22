@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Link from "@material-ui/core/Link";
 import {registerAPI} from "../restApi/Index";
 import FacebookAuth from "react-facebook-auth";
+import GlobalContext from "../../Contexts/GlobalContext";
 
 const MyFacebookButton = ({ onClick }) => (
   <button className="btn btn-primary" className="btn form-social-btn" onClick={onClick}>
@@ -16,6 +17,7 @@ export const Login = (props) => {
     username: "",
     password: "",
   });
+  const {userInfo, setUser} = useContext(GlobalContext)
 
   const onChange = ({ target }) => {
     const value = target.value;
@@ -34,12 +36,56 @@ export const Login = (props) => {
     registerAPI(data);
     console.log(data);
   };
-  const authenticate = (response) => {
+  const getLongLivedToken = async(token)=> {
+    var myHeaders = new Headers();
+    myHeaders.append("fb_exchange_token", token);
+    
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      redirect: 'follow'
+    };
+    
+    let req = await fetch("https://zingsdd.herokuapp.com/user/getToken", requestOptions);
+    let resp = await req.json();
+    console.log(resp);
+    if(req.status === 200)
+    return resp;
+    return null;
+  }
+  const register  = async (user) => {
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer " + user.accessToken);
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      first_name: user.name,
+      fbid: user.userID,
+      email: user.email
+    })
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: raw,
+      redirect: 'follow'
+    };
+
+    let req = await fetch("https://zingsdd.herokuapp.com/user/register", requestOptions)
+    let resp = await req.json();
+    console.log(resp);
+    return resp;
+  }
+  const authenticate = async (response) => {
     console.log(response);
-    // Api call to server so we can validate the token
-    if(response.status !=="unknown"){
-      setAccessToken(response.accessToken);
+    let validateToken = await getLongLivedToken(response.accessToken);
+    response.accessToken=validateToken.access_token;
+    setUser(response);
+    if(!validateToken.registered) {
+      register(response);
     }
+    props.closeModal()
+    // Api call to server so we can validate the token
   };
   return (
     <div className="modal-content">
@@ -92,6 +138,7 @@ export const Login = (props) => {
       <FacebookAuth
         appId="394058105111687"
         callback={authenticate}
+        fields="name,email,picture"
         component={MyFacebookButton}
         redirectUri={"localhost:3000"}
       />

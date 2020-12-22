@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Modal from 'react-modal';
+import GlobalContext from "../../Contexts/GlobalContext";
+import UserInfo from "../UserInfo";
 import { Login } from "./Login";
 import { Register } from "./Register";
 
@@ -18,7 +20,7 @@ const btnLogin={
 export const Authentication = (props) => {
   const [showLoginPage, setShowLoginPage] = useState(false);
   const [showRegisterPage, setShowRegisterPage] = useState(false);
-
+  const {userInfo} = useContext(GlobalContext)
   const showLoginModal = () => {
     setShowLoginPage(true);
     setShowRegisterPage(false);
@@ -34,12 +36,18 @@ export const Authentication = (props) => {
   };
   return (
     <div>
-      <button className="btn btn-default" onClick={()=>showLoginModal()} style={btnLogin}>
-        Нэвтрэх
-      </button>
-      <button  className="btn btn-primary" onClick={()=>showRegisterModal()}>
-        Бүртгүүлэх
-      </button>
+      {
+        userInfo===null? <div>
+             <button className="btn btn-default" onClick={()=>showLoginModal()} style={btnLogin}>
+              Нэвтрэх
+            </button>
+            <button  className="btn btn-primary" onClick={()=>showRegisterModal()}>
+              Бүртгүүлэх
+            </button>
+        </div> 
+        : <UserInfo user = {userInfo}/>
+      }
+     
       <Modal
         className="modal animate"
         isOpen={showRegisterPage||showLoginPage}
