@@ -1,20 +1,22 @@
 import React, { useState, Redirect, useEffect } from "react";
-
-const Context = React.createContext();
+import ArticleData from "../components/search/SearchResultData.json";
+const GlobalContext = React.createContext();
 
 export const Global = (props) => {
   const [user, setUser] = useState(null);
-
+  const [articles, setArticles] = useState([]);
   return (
-    <Context.Provider
+    <GlobalContext.Provider
       value={{
         user,
         setUser,
+        articles,
+        setArticles,
       }}
     >
       {props.children}
-    </Context.Provider>
+    </GlobalContext.Provider>
   );
 };
 
-export default Context;
+export default GlobalContext;

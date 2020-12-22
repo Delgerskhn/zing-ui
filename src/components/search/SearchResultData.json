@@ -1,0 +1,186 @@
+{
+    "status": "ok",
+    "totalResults": 748,
+    "articles": [
+        {
+            "source": {
+                "id": null,
+                "name": "Gizmodo.com",
+                "description": null,
+                "url": null,
+                "category": null,
+                "language": null,
+                "country": null
+            },
+            "author": "Matt Novak",
+            "title": "Ripple Claims Bitcoin Is 'Chinese-Controlled' While Announcing New Lawsuit From SEC",
+            "description": "The Securities and Exchange Commission plans to sue Ripple in federal civil court for selling unregistered securities, according to a news release published online by the cryptocurrency company late Monday. Ripple defended its cryptocurrency, known as XRP, as…",
+            "url": "https://gizmodo.com/ripple-claims-bitcoin-is-chinese-controlled-while-annou-1845932148",
+            "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/ahh1hzpmuhrh8ybwimab.jpg",
+            "publishedAt": "2020-12-22T11:30:00.000+00:00",
+            "content": "The Securities and Exchange Commission plans to sue Ripple in federal civil court for selling unregistered securities, according to a news release published online by the cryptocurrency company late … [+2950 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Gizmodo.com",
+                "description": null,
+                "url": null,
+                "category": null,
+                "language": null,
+                "country": null
+            },
+            "author": "John Biggs",
+            "title": "Hackers Steal Thousands of Customer Emails From Popular Crypto Wallet",
+            "description": "Hackers have released over 270,000 email addresses associated with customers of the popular hardware-based cryptocurrency wallet Ledger. The leak, which allegedly stemmed from a company hack last July, appears to contain over 270,000 customer emails and other…",
+            "url": "https://gizmodo.com/hackers-steal-thousands-of-customer-emails-from-popular-1845928749",
+            "urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/vuxcjnneg3f7lyfrtrlw.jpg",
+            "publishedAt": "2020-12-21T20:50:00.000+00:00",
+            "content": "Hackers have released over 270,000 email addresses associated with customers of the popular hardware-based cryptocurrency wallet Ledger. The leak, which allegedly stemmed from a company hack last Jul… [+2813 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters",
+                "description": null,
+                "url": null,
+                "category": null,
+                "language": null,
+                "country": null
+            },
+            "author": "Tom Wilson",
+            "title": "Bitcoin slumps 6% as new COVID-19 strain upsets wider markets - Reuters UK",
+            "description": "Bitcoin dropped as much as 6% on Monday, with fears over a fast-spreading new coronavirus strain in Britain hitting assets across wider markets.",
+            "url": "https://www.reuters.com/article/uk-crypto-currency-idUKKBN28V1J5",
+            "urlToImage": "https://static.reuters.com/resources/r/?m=02&d=20201221&t=2&i=1545299228&r=LYNXMPEGBK0VH&w=800",
+            "publishedAt": "2020-12-21T12:50:00.000+00:00",
+            "content": "FILE PHOTO: A representation of virtual currency Bitcoin is seen in this illustration taken November 19, 2020. REUTERS/Dado Ruvic/Illustration\r\nLONDON (Reuters) - Bitcoin dropped as much as 6% on Mon… [+1263 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters",
+                "description": null,
+                "url": null,
+                "category": null,
+                "language": null,
+                "country": null
+            },
+            "author": "Reuters Staff",
+            "title": "Bitcoin slumps 6% as new COVID-19 strain upsets wider markets - Reuters UK",
+            "description": "Bitcoin dropped as much as 6% on Monday, with fears over a fast-spreading new coronavirus strain in Britain hitting assets across wider markets.",
+            "url": "https://uk.reuters.com/article/crypto-currency-idUKKBN28V1J0",
+            "urlToImage": "https://static.reuters.com/resources/r/?m=02&d=20201221&t=2&i=1545299149&r=LYNXMPEGBK0VC&w=800",
+            "publishedAt": "2020-12-21T12:49:00.000+00:00",
+            "content": "By Reuters Staff\r\nFILE PHOTO: A representation of virtual currency Bitcoin is seen in front of a stock graph in this illustration taken November 19, 2020. REUTERS/Dado Ruvic/Illustration\r\nLONDON (Reu… [+359 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters",
+                "description": null,
+                "url": null,
+                "category": null,
+                "language": null,
+                "country": null
+            },
+            "author": "Gertrude Chavez-Dreyfuss",
+            "title": "Total crypto fund inflows top $5 billion this year, up more than 600% - report - Reuters",
+            "description": "Total investor inflows into cryptocurrency funds and products hit $5.6 billion so far this year, up more than 600% from 2019, according to the latest data from asset manager CoinShares.",
+            "url": "https://www.reuters.com/article/us-crypto-currencies-flows-idUSKBN28V2OE",
+            "urlToImage": "https://static.reuters.com/resources/r/?m=02&d=20201221&t=2&i=1545352030&r=LYNXMPEGBK1H1&w=800",
+            "publishedAt": "2020-12-21T20:17:00.000+00:00",
+            "content": "NEW YORK (Reuters) - Total investor inflows into cryptocurrency funds and products hit $5.6 billion so far this year, up more than 600% from 2019, according to the latest data from asset manager Coin… [+2077 chars]"
+        },
+        {
+            "source": {
+                "id": "reuters",
+                "name": "Reuters",
+                "description": null,
+                "url": null,
+                "category": null,
+                "language": null,
+                "country": null
+            },
+            "author": "Suzanne Barlyn",
+            "title": "Tesla's Elon Musk asks about converting 'large transactions' to bitcoin - Reuters India",
+            "description": "Elon Musk on Sunday asked about the possibility of converting \"large transactions\" of Tesla Inc's balance sheet into bitcoin, according to a Twitter exchange between Musk and a well-known advocate for the digital currency.",
+            "url": "https://in.reuters.com/article/tesla-cryptocurrency-idINKBN28U0XS",
+            "urlToImage": "https://static.reuters.com/resources/r/?m=02&d=20201220&t=2&i=1545233494&r=LYNXMPEGBJ0HY&w=800",
+            "publishedAt": "2020-12-20T23:03:00.000+00:00",
+            "content": "(Reuters) - Elon Musk on Sunday asked about the possibility of converting large transactions of Tesla Incs balance sheet into bitcoin, according to a Twitter exchange between Musk and a well-known ad… [+1613 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider",
+                "description": null,
+                "url": null,
+                "category": null,
+                "language": null,
+                "country": null
+            },
+            "author": "Emily Graffeo",
+            "title": "Elon Musk inquired on Twitter about 'large' bitcoin transactions after a crypto booster suggested he convert Tesla's balance sheet",
+            "description": "Summary List Placement<ul>\n<li>Elon Musk tweeted a racy photo on Sunday suggesting he's being tempted by bitcoin.</li>\n<li>The elicited a response from crypto booster Michael Saylor, who suggested Musk convert Tesla's balance sheet from US dollars to bitcoin.…",
+            "url": "https://www.businessinsider.com/elon-musk-bitcoin-transactions-twitter-inquiry-tesla-balance-sheet-saylor-2020-12",
+            "urlToImage": "https://i.insider.com/5fe0aa77d366e60018099437?width=1200&format=jpeg",
+            "publishedAt": "2020-12-21T15:19:13.000+00:00",
+            "content": "<ul><li>Elon Musk tweeted a racy photo on Sunday suggesting he's being tempted by bitcoin.</li><li>The elicited a response from crypto booster Michael Saylor, who suggested Musk convert Tesla's balan… [+2649 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Entrepreneur",
+                "description": null,
+                "url": null,
+                "category": null,
+                "language": null,
+                "country": null
+            },
+            "author": "Mairem Del Río",
+            "title": "Dogecoin surged 25% thanks to a simple tweet from Elon Musk about the cryptocurrency",
+            "description": "Early this Sunday, the CEO of Tesla and SpaceX took to Twitter to dismiss Bitcoin and caused a significant increase in DOGE.",
+            "url": "https://www.entrepreneur.com/article/362047",
+            "urlToImage": "https://assets.entrepreneur.com/content/3x2/2000/1608499799-Dic20Dodgecoinsube25porcientoportuitdeElonMuskPORTADA.jpeg",
+            "publishedAt": "2020-12-20T21:40:00.000+00:00",
+            "content": "December\r\n20, 2020\r\n4 min read\r\nThis article was translated from our Spanish edition using AI technologies. Errors may exist due to this process.\r\nOpinions expressed by Entrepreneur contributors are … [+2984 chars]"
+        },
+        {
+            "source": {
+                "id": "business-insider",
+                "name": "Business Insider",
+                "description": null,
+                "url": null,
+                "category": null,
+                "language": null,
+                "country": null
+            },
+            "author": "Vicky Ge Huang",
+            "title": "The CIO of a new crypto fund that has returned 220% to investors this year explains why bitcoin topped $20,000 for the first time ever this week — and shares another digital currency set to become the 'asset of the year' in 2021",
+            "description": "Summary List PlacementBitcoin was once derided by serious investors as a bubble or a Ponzi scheme. But this year, it has become an irresistible investment for many of them. \nJust this Wednesday, bitcoin topped $20,000 for the first time and proceeded to climb…",
+            "url": "https://www.businessinsider.com/bitcoin-crypto-outlook-forecast-2021-bitwise-fund-cio-hougan-ethereum-2020-12",
+            "urlToImage": "https://i.insider.com/5fdcc9d3d366e60018098e10?width=1200&format=jpeg",
+            "publishedAt": "2020-12-19T13:05:00.000+00:00",
+            "content": "Bitcoin was once derided by serious investors as a bubble or a Ponzi scheme. But this year, it has become an irresistible investment for many of them. \r\nJust this Wednesday, bitcoin topped $20,000 fo… [+5208 chars]"
+        },
+        {
+            "source": {
+                "id": null,
+                "name": "Slashdot.org",
+                "description": null,
+                "url": null,
+                "category": null,
+                "language": null,
+                "country": null
+            },
+            "author": "EditorDavid",
+            "title": "Elon Musk Tweeted About a Bitcoin Rival. It Soared 20%",
+            "description": "\"Bitcoin is almost as bs as fiat money,\" Elon Musk tweeted on Sunday, and then followed it up with another tweet. \"One Word: Doge.\" \n\n\"The tweet sent shares of Dogecoin up nearly 20% and landed it on the list of trending Twitter topics,\" reports CNN. (Later t…",
+            "url": "https://news.slashdot.org/story/20/12/21/0220242/elon-musk-tweeted-about-a-bitcoin-rival-it-soared-20",
+            "urlToImage": "https://a.fsdn.com/sd/topics/money_64.png",
+            "publishedAt": "2020-12-21T03:18:00.000+00:00",
+            "content": "\"Bitcoin is almost as bs as fiat money,\" Elon Musk tweeted on Sunday, and then followed it up with another tweet. \"One Word: Doge.\"\"The tweet sent shares of Dogecoin up nearly 20% and landed it on th… [+747 chars]"
+        }
+    ]
+}

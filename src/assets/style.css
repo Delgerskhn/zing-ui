@@ -440,14 +440,19 @@ padding: 0;
     background-size: 50% 3px,3px 50%; /*thickness = 2px, length = 50% (25px)*/
     background-repeat:no-repeat;
 }
+.home-list-container {
+    display: flex;
+    justify-content: center;
+}
 
+.home-list {
+    width: 90%;
+}
 
 .template{
     width: 100%;
-    position: absolute;
-    top: 60%;
-    width: 100%;
     display: flex;
+    margin-top: 45px;
     justify-content: center;
 }
 .homeTemplate{
